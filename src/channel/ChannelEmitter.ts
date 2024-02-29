@@ -201,11 +201,6 @@ export abstract class ChannelEmitter<
 	 * Handles public messages
 	 */
 	private async _onPublicMessage(event: MessageEvent<unknown>): Promise<void> {
-		// Return is event is not from target
-		if (event.source !== this._target.contentWindow) {
-			return;
-		}
-
 		try {
 			const message = validateMessage(event.data);
 
